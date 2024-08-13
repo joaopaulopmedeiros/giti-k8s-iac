@@ -1,6 +1,6 @@
-@Purchase.Api_HostAddress = http://localhost:5121
+@api_base_url = http://localhost:5121
 
-GET {{Purchase.Api_HostAddress}}/weatherforecast/
+GET {{api_base_url}}/purchases?Size=1&Page=10
 Accept: application/json
 
 ###
