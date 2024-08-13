@@ -1,5 +1,8 @@
+using Microsoft.AspNetCore.Mvc;
+
 var builder = WebApplication.CreateBuilder(args);
 
+// Register services
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddApiServices();
@@ -14,7 +17,12 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
 app.MapHealthChecks("/health");
-app.MapGet("/purchases", async (PurchaseService service) => await service.SearchAsync()).WithOpenApi();
+
+app.MapGet("/purchases", async (
+    [AsParameters] PurchaseSearchRequest request,
+    [FromServices] PurchaseService service) => await service.SearchAsync(request))
+.WithOpenApi();
 
 await app.RunAsync();
