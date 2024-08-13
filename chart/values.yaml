@@ -1,7 +1,7 @@
 replicaCount: 2
 
 image:
-  repository: purchase-api
+  repository: joaopaulopmedeiros/purchase-api:1.0.0
   pullPolicy: IfNotPresent
   tag: ""
 
