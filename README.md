@@ -1,7 +1,7 @@
 # K8s - Infrastructure As Code
 
 ## Description
-This repository addresses a proof of concept about a dockerized .net web api provisioned in kubernetes cluster.
+This repository addresses a proof of concept about a dockerized ASP.NET Core web api provisioned in kubernetes cluster via ArgoCD and Helm.
 
 <img src="./docs/argo/Screenshot 2024-08-13 at 01.27.38.png">
 
