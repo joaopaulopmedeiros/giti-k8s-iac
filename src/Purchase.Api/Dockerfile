@@ -8,10 +8,10 @@ USER app
 FROM --platform=$BUILDPLATFORM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 ARG configuration=Release
 WORKDIR /src
-COPY ["src/Purchase.Api/Purchase.Api.csproj", "src/Purchase.Api/"]
-RUN dotnet restore "src/Purchase.Api/Purchase.Api.csproj"
+COPY ["./Purchase.Api.csproj", "./"]
+RUN dotnet restore "./Purchase.Api.csproj"
 COPY . .
-WORKDIR "/src/src/Purchase.Api"
+WORKDIR "/src/."
 RUN dotnet build "Purchase.Api.csproj" -c "$configuration" -o /app/build
 
 FROM build AS publish
