@@ -12,11 +12,11 @@ COPY ["src/Purchase.Api/Purchase.Api.csproj", "src/Purchase.Api/"]
 RUN dotnet restore "src/Purchase.Api/Purchase.Api.csproj"
 COPY . .
 WORKDIR "/src/src/Purchase.Api"
-RUN dotnet build "Purchase.Api.csproj" -c $configuration -o /app/build
+RUN dotnet build "Purchase.Api.csproj" -c "$configuration" -o /app/build
 
 FROM build AS publish
 ARG configuration=Release
-RUN dotnet publish "Purchase.Api.csproj" -c $configuration -o /app/publish /p:UseAppHost=false
+RUN dotnet publish "Purchase.Api.csproj" -c "$configuration" -o /app/publish /p:UseAppHost=false
 
 FROM base AS final
 WORKDIR /app
