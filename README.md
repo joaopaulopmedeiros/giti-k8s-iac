@@ -1,4 +1,4 @@
-# Cloud Infrastructure As Code
+# K8s - Infrastructure As Code
 
 ## Description
 This repository addresses a proof of concept about a dockerized .net web api provisioned in kubernetes cluster.
