@@ -20,4 +20,7 @@ add-helm-chart:
 delete-cluster:
 	kind delete cluster --name $(CLUSTER_NAME)
 
+forward-purchase-api:
+	kubectl port-forward svc/purchase-api 5121:5121	
+
 all: create-cluster install-argocd expose-argocd add-helm-chart
